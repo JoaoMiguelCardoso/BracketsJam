@@ -14,10 +14,11 @@ public class SpawnPoint : MonoBehaviour
     private RoomsTemplete Rooms;
     private int Rand, bl, ll, tl, rl;
     private bool mane;
-
+    private float tempo = 4f;
 
     private void Start()
     {
+        Destroy(this.gameObject, tempo);
         Rooms = GameObject.FindGameObjectWithTag("rooms").GetComponent<RoomsTemplete>();
         if(Rooms != null){
             if(Rooms.BottomRooms != null){
@@ -59,9 +60,15 @@ public class SpawnPoint : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Spawnpoints" ){
-            if(other.GetComponent<SpawnPoint>().mane == false && mane == false){
-                Instantiate(Rooms.clossed, transform.position, Quaternion.identity);
-                Destroy(this.gameObject);
+            if(other.GetComponent<SpawnPoint>() != null){
+                if(other.GetComponent<SpawnPoint>().mane == false && mane == false){
+                    if(Rooms != null){
+                        if(Rooms.clossed != null){
+                            Instantiate(Rooms.clossed, transform.position, Quaternion.identity);
+                        }
+                    }
+                    Destroy(this.gameObject);
+                }
             }
             mane = true;
         }
