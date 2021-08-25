@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]private int OpenningDirection;
+    /* 
+    1  ==> bottom door needed    
+    2  ==> left door needed
+    3  ==> top door needed
+    4  ==> rigth door needed
+    */
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Update() {
+        switch (OpenningDirection)
+        {
+            case 1:
+            break;
+            case 2:
+            break;
+            case 3:
+            break;
+            case 4: 
+            break;
+            default:
+                Debug.Log("ta loko?");
+            break;
+        }
     }
+    
+    
+
+
 }
