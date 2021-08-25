@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class AIInimigoBasico : MonoBehaviour
 {
@@ -31,15 +32,17 @@ public class AIInimigoBasico : MonoBehaviour
         {
             rb.rotation = angle;
 
-            rb.position = Vector2.MoveTowards(transform.position,Player.position,velocidade * Time.deltaTime);
+            GetComponent<AIPath>().canMove = true;
         }
         else if(distanceFromPlayer < lineOfSiteLimit)
         {
             rb.rotation = angle;
             rb.position = Vector2.MoveTowards(transform.position,Player.position,-velocidade * Time.deltaTime);
         }
+        else if(distanceFromPlayer > lineOfSite)GetComponent<AIPath>().canMove = false;
         if(distanceFromPlayer < minimumAttackDistancePlayer && tempoTiros <Time.time)
         {
+            rb.rotation = angle;
             Instantiate(bala,GetComponentInChildren<Transform>().position,transform.rotation);
             tempoTiros = Time.time + tempoEntreTiros;
         }

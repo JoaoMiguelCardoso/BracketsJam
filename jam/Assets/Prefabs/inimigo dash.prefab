@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad863dd7c25cea41ab3fd6c7b275aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 7
+  velocidade: 20
   Player: {fileID: 0}
   distanceFromPlayer: 0
   minimumAttackDistancePlayer: 0

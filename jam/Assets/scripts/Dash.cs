@@ -30,8 +30,12 @@ public class Dash : MonoBehaviour
     void Dashh()
     {
         Vector2 direction = new Vector2(GetComponent<PlayerMovement>().hori,GetComponent<PlayerMovement>().verti);
-        if(GetComponent<PlayerMovement>().hori != 0 && GetComponent<PlayerMovement>().hori != 0){
+        if(GetComponent<PlayerMovement>().hori != 0){
         rb.velocity = direction * velocidade;
+        }
+        else if(GetComponent<PlayerMovement>().verti != 0)
+        {
+            rb.velocity = direction * velocidade;
         }
         else
         {
