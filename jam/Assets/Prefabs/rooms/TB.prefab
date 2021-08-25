@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8e9abafbe2606448e74331859aba1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OpenningDirection: 3
+  OpenningDirection: 1
 --- !u!61 &8499178518064933044
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8e9abafbe2606448e74331859aba1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OpenningDirection: 1
+  OpenningDirection: 2
 --- !u!61 &5865870818235416403
 BoxCollider2D:
   m_ObjectHideFlags: 0
