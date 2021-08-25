@@ -58,12 +58,12 @@ public class SpawnPoint : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Spawnpoints" && other.GetComponent<SpawnPoint>().mane == true){
-            Debug.Log("testo");
-            Destroy(this.gameObject);
-        }
-        if(other.tag == "rooms"){
-            Debug.Log("filho da puta");
+        if(other.tag == "Spawnpoints" ){
+            if(other.GetComponent<SpawnPoint>().mane == false && mane == false){
+                Instantiate(Rooms.clossed, transform.position, Quaternion.identity);
+                Destroy(this.gameObject);
+            }
+            mane = true;
         }
     }
 
