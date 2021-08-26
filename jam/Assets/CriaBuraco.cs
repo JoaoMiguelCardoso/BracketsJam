@@ -14,10 +14,6 @@ public class CriaBuraco : MonoBehaviour
         3 == left;
         4 == right;
     */
-    private void Start()
-    {
-        tipo = this.name;
-    }
     private void Update()
     {
         Tiposala();

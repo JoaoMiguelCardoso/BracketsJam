@@ -65,9 +65,9 @@ public class SpawnPoint : MonoBehaviour
                     if(Rooms != null){
                         if(Rooms.clossed != null){
                             Instantiate(Rooms.clossed, transform.position, Quaternion.identity);
+                            Destroy(this.gameObject);
                         }
                     }
-                    Destroy(this.gameObject);
                 }
             }
             mane = true;
